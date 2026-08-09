@@ -11,3 +11,5 @@ https://7979autogarage.mn
 4. Door ni Commit changes darna
 
 Netlify avtomataar 30 sekundiin dotor niitelne.
+
+GitHub -> Netlify avtomat holbolt idewhtei.

@@ -382,6 +382,28 @@ section{position:relative;z-index:1;padding:clamp(48px,8vw,76px) var(--pad)}
   border:1px solid var(--line);background:#0d1116;
   box-shadow:0 20px 50px rgba(0,0,0,.5);
 }
+.vidWrap{
+  position:relative;margin:0 auto 18px;max-width:940px;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);background:#000;
+  box-shadow:0 30px 70px -40px rgba(0,0,0,.9)
+}
+.vidHead{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:14px 18px;background:var(--card);border-bottom:1px solid var(--line)
+}
+.vidHead b{font-size:15px;color:var(--txt)}
+.vidHead span{font-size:12px;color:var(--mut)}
+.vidWrap video{
+  display:block;width:100%;height:auto;aspect-ratio:16/9;
+  object-fit:cover;background:#000
+}
+@media(max-width:640px){
+  .vidWrap{border-radius:12px;margin:0 0 14px;max-width:100%}
+  .vidHead{padding:11px 13px;gap:2px;flex-direction:column;align-items:flex-start}
+  .vidHead b{font-size:13.5px;line-height:1.3}
+  .vidHead span{font-size:11px}
+  .vidWrap video{aspect-ratio:16/9;object-fit:contain;background:#000}
+}
 .mapWrap iframe{
   display:block;width:100%;height:clamp(300px,42vh,440px);border:0;
   filter:invert(90%) hue-rotate(180deg) saturate(.55) contrast(.92);
@@ -511,6 +533,7 @@ footer b{color:var(--grn);font-weight:800;letter-spacing:.02em}
     <a href="#service">Үйлчилгээ</a>
     <a href="#price">Үнэ</a>
     <a href="#oil">Тосны багц</a>
+    <a href="#plug">Лаа</a>
     <a href="#contact">Холбоо барих</a>
   </div>
   <a class="callbtn" href="tel:+97690797945">📞 9079 7945</a>
@@ -523,6 +546,7 @@ footer b{color:var(--grn);font-weight:800;letter-spacing:.02em}
   <a href="#service">Үйлчилгээ <span>→</span></a>
   <a href="#price">Үнэ <span>→</span></a>
   <a href="#oil">Тосны багц <span>→</span></a>
+  <a href="#plug">Лаа <span>→</span></a>
   <a href="#map">Байршил <span>→</span></a>
   <a href="#contact">Холбоо барих <span>→</span></a>
 </div>
@@ -605,11 +629,10 @@ footer b{color:var(--grn);font-weight:800;letter-spacing:.02em}
   </div>
   <div class="rail" id="r1">
     <!-- Зургаа оруулах бол .shot дотор <img src="..."> тавиад b-г устгана -->
-    <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota SAI</b><i>EGR КОМ</i></div><div class="body"><h3>Toyota SAI</h3><p>Гибрид седан</p><div class="price"><b>70,000</b><span>₮</span></div></div></div>
+    <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota SAI</b><i>EGR КОМ</i></div><div class="body"><h3>Toyota SAI</h3><p>Гибрид седан</p><div class="price"><b>90,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Prius 20</b><i>EGR КОМ</i></div><div class="body"><h3>Toyota Prius 20</h3><p>Гибрид хэтчбэк</p><div class="price"><b>90,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota Aqua</b><i>EGR КОМ</i></div><div class="body"><h3>Toyota Aqua</h3><p>Гибрид хэтчбэк</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota Fielder</b><i>EGR КОМ</i></div><div class="body"><h3>Corolla Fielder</h3><p>Гибрид вагон</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
-    <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Nissan Note</b><i>EGR КОМ</i></div><div class="body"><h3>Nissan Note</h3><p>Гибрид хэтчбэк</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag">Sedan</span><b>Toyota Allion</b><i>EGR КОМ</i></div><div class="body"><h3>Toyota Allion</h3><p>Corolla Allion</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota Axio</b><i>EGR КОМ</i></div><div class="body"><h3>Corolla Axio</h3><p>Гибрид седан</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
     <div class="card"><div class="shot"><span class="tag h">Hybrid</span><b>Toyota Sienta</b><i>EGR КОМ</i></div><div class="body"><h3>Sienta Hybrid</h3><p>Минивэн</p><div class="price"><b>110,000</b><span>₮</span></div></div></div>
@@ -656,6 +679,21 @@ footer b{color:var(--grn);font-weight:800;letter-spacing:.02em}
   </div>
 </section>
 
+<!-- ═══ АСААЛТЫН ЛАА ═══ -->
+<section id="plug">
+  <div class="head rv">
+    <div>
+      <h2>Асаалтын <span>лаа</span></h2>
+      <p>Sovkó — иридиум 3 электродтой, зэс голтой лаа. Германы стандарт, ISO/TS 16949:2009 гэрчилгээтэй.</p>
+    </div>
+    <div class="navBtns"><button data-rail="r3" data-dir="-1">‹</button><button data-rail="r3" data-dir="1">›</button></div>
+  </div>
+  <div class="rail" id="r3">
+    <div class="card"><div class="shot"><span class="tag h">Iridium</span><b>Sovkó 16</b><i>4Ш БАГЦ</i></div><div class="body"><h3>Sovkó 16 сэвчээ</h3><p>4 ширхэг багц</p><div class="price"><b>200,000</b><span>₮</span></div></div></div>
+    <div class="card"><div class="shot"><span class="tag h">Iridium</span><b>Sovkó 14</b><i>4Ш БАГЦ</i></div><div class="body"><h3>Sovkó 14 сэвчээ</h3><p>4 ширхэг багц</p><div class="price"><b>200,000</b><span>₮</span></div></div></div>
+  </div>
+</section>
+
 <!-- ═══ ХОЛБОО БАРИХ ═══ -->
 <section id="contact">
   <div class="ctaWrap rv">
@@ -669,10 +707,23 @@ footer b{color:var(--grn);font-weight:800;letter-spacing:.02em}
     </div>
     <div class="info">
       <div><em>📍</em><div><b>Хаяг</b><a class="addr" id="addrLink" href="#map">32-оос 57 руу явах замд «Анар авто сервис»-ийн баруун талаар, 52 тоот гараж.</a></div></div>
-      <div><em>🗺️</em><div><b>Дэлгэрэнгүй заавар</b>32-оос 57 руу явах замд «Анар авто сервис»-ийн баруун талаар орсон засмал замаар хойшоо яваад, 2 дахь гудамжаар баруун эргэхэд 52 тоот гараж.</div></div>
+      <div><em>🗺️</em><div><b>Дэлгэрэнгүй заавар</b><a class="addr" href="#zam" style="display:block;margin-bottom:4px">▶ Замын бичлэг үзэх</a>32-оос 57 руу явах замд «Анар авто сервис»-ийн баруун талаар орсон засмал замаар хойшоо яваад, 2 дахь гудамжаар баруун эргэхэд 52 тоот гараж.</div></div>
       <div><em>🕙</em><div><b>Цагийн хуваарь</b>Өдөр бүр 10:00 – 00:00</div></div>
       <div><em>🏁</em><div><b>Гараж</b>7979 Auto Garage · Apek's Garage · 2022 оноос</div></div>
     </div>
+  </div>
+
+  <div class="vidWrap rv" id="zam">
+    <div class="vidHead">
+      <b>🚗 Замын заавар — бичлэг</b>
+      <span>32-оос 57 руу явах зам · 1 мин 37 сек</span>
+    </div>
+    <video controls preload="none" playsinline poster="images/zam-poster.jpg"
+           title="7979 Auto Garage — хүрэх замын заавар">
+      <source src="zam-zaawar.mp4" type="video/mp4">
+      Таны хөтөч бичлэг тоглуулахыг дэмжихгүй байна.
+      <a href="zam-zaawar.mp4">Бичлэгийг татаж авах</a>
+    </video>
   </div>
 
   <div class="mapWrap rv" id="map">
@@ -735,11 +786,12 @@ const LABEL = "7979 Auto Garage — EGR ком цэвэрлэгээ";
    Зураг байхгүй бол одоогийн текст хувилбар нь харагдана.
    ═══════════════════════════════════════════════════════════ */
 const IMG={
-  r1:['sai','prius20','aqua','fielder','note','allion','axio','sienta',
+  r1:['sai','prius20','aqua','fielder','allion','axio','sienta',
       'ct200h','prius30','noah','rx450','prius50','gs300h','crown210',
       'crown220','harrier65','is300','camry50','corolla'],
   r2:['mannol','rolf-p5','g-energy','castrol-10w40','castrol-0w20',
-      'rolf-gt','tani','shell']
+      'rolf-gt','tani','shell'],
+  r3:['sovko16','sovko14']
 };
 const EXT=['jpg','jpeg','png','webp'];
 Object.entries(IMG).forEach(([rail,names])=>{
@@ -826,6 +878,17 @@ addEventListener('scroll',()=>{
   d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
   addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
   matchMedia('(min-width:861px)').addEventListener('change',e=>{if(e.matches)set(false);});
+})();
+
+/* Бичлэгийн файл байхгүй бол блокийг нууна */
+(function(){
+  var w=document.querySelector('.vidWrap'), v=w&&w.querySelector('video');
+  if(!w||!v) return;
+  var hide=function(){ w.style.display='none'; };
+  v.addEventListener('error',hide,true);
+  var s=v.querySelector('source');
+  if(s) s.addEventListener('error',hide);
+  fetch(s?s.getAttribute('src'):'',{method:'HEAD'}).then(function(r){ if(!r.ok) hide(); }).catch(hide);
 })();
 </script>
 </body>
